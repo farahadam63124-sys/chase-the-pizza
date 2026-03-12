@@ -1,10 +1,13 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
+    mySprite.setStayInScreen(true)
+    pizza.setStayInScreen(true)
 })
 let pizza: Sprite = null
+let mySprite: Sprite = null
 scene.setBackgroundColor(2)
-let mySprite = sprites.create(assets.image`me`, SpriteKind.Player)
+mySprite = sprites.create(assets.image`me`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 pizza = sprites.create(img`
     . . . . . . b b b b . . . . . . 
@@ -24,3 +27,5 @@ pizza = sprites.create(img`
     4 d d d 4 4 4 . . . . . . . . . 
     4 4 4 4 . . . . . . . . . . . . 
     `, SpriteKind.Food)
+mySprite.setStayInScreen(true)
+pizza.setStayInScreen(true)
